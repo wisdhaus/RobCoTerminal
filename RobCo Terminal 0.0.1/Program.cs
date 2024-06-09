@@ -335,6 +335,7 @@ public class terminal
                 && entered_key != "SHOWPASSWORD"
                 && entered_key != "ADDATTEMPT"
                 && !setcolor
+                && entered_key != "OFF"
             )
             {
                 attempts--;
