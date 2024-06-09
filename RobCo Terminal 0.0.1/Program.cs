@@ -9,13 +9,37 @@ public class terminal
 {
     static void Main()
     {
-
         //creating of an array with all possible passwords
-        string[] all_keys = { "EXCHANGED", "RADIATION", "VOLUNTEER", "TERRIFIED", "POISONING", "RETURNING", "AMPLIFIES",
-                              "RELEASING", "BATTERIES", "COMPANIES", "IMPLANTED", "SELECTING", "SITUATION", "ENTRANCES",
-                              "OPERATING", "DEFEATING", "OFFSPRING", "COMMUNITY", "PANTHEIST", "COUNTRIES", "POSITIONS",
-                              "FLAVORING", "REPAIRING", "BARTERING", "PONDEROUS", "FORTIFIED" };
-        
+        string[] all_keys =
+        {
+            "EXCHANGED",
+            "RADIATION",
+            "VOLUNTEER",
+            "TERRIFIED",
+            "POISONING",
+            "RETURNING",
+            "AMPLIFIES",
+            "RELEASING",
+            "BATTERIES",
+            "COMPANIES",
+            "IMPLANTED",
+            "SELECTING",
+            "SITUATION",
+            "ENTRANCES",
+            "OPERATING",
+            "DEFEATING",
+            "OFFSPRING",
+            "COMMUNITY",
+            "PANTHEIST",
+            "COUNTRIES",
+            "POSITIONS",
+            "FLAVORING",
+            "REPAIRING",
+            "BARTERING",
+            "PONDEROUS",
+            "FORTIFIED"
+        };
+
         const int LENGTH_OF_PASSWORDS = 9;
 
         //creating of an array which contains 13 randomly chosen passwords from "all_keys" array
@@ -87,9 +111,39 @@ public class terminal
         }
 
         //array of mathematical symbols
-        string[] symbols1 = { "!", "-", "#", "[", "@", ")", "^", "]", "|",
-            "<", "=", "?", "{", "(", "\"", "?", ">", "}", ":", "$", "/", ".",
-            "\\", "*", "'", ";", "_", "%", ",", "+"};
+        string[] symbols1 =
+        {
+            "!",
+            "-",
+            "#",
+            "[",
+            "@",
+            ")",
+            "^",
+            "]",
+            "|",
+            "<",
+            "=",
+            "?",
+            "{",
+            "(",
+            "\"",
+            "?",
+            ">",
+            "}",
+            ":",
+            "$",
+            "/",
+            ".",
+            "\\",
+            "*",
+            "'",
+            ";",
+            "_",
+            "%",
+            ",",
+            "+"
+        };
 
         //array of mathematical symbols and passwords from "chosen_keys" array
         string[] symbols2 = new string[408];
@@ -131,7 +185,6 @@ public class terminal
 
         byte attempts = 4;
         string square = "█▌";
-        
 
         string entered_key = "";
         bool success = false;
@@ -148,7 +201,6 @@ public class terminal
         //terminal interface output
         while (attempts != 0 && end < 2 && off == false)
         {
-
             bool setcolor = false;
 
             if (white)
@@ -278,7 +330,12 @@ public class terminal
             {
                 attempts++;
             }
-            if (entered_key != right_key && entered_key != "SHOWPASSWORD" && entered_key != "ADDATTEMPT" && !setcolor)
+            if (
+                entered_key != right_key
+                && entered_key != "SHOWPASSWORD"
+                && entered_key != "ADDATTEMPT"
+                && !setcolor
+            )
             {
                 attempts--;
             }
@@ -288,7 +345,6 @@ public class terminal
             }
             if (entered_key == "ADDATTEMPT" | setcolor)
             {
-
                 for (int v = 0; v < 182; v++)
                 {
                     response_field[v] = response_field[v + 13];
@@ -367,7 +423,12 @@ public class terminal
 
             int x = 0;
 
-            if (entered_key != "SHOWPASSWORD" && entered_key != "ADDATTEMPT" && entered_key != right_key && !setcolor)
+            if (
+                entered_key != "SHOWPASSWORD"
+                && entered_key != "ADDATTEMPT"
+                && entered_key != right_key
+                && !setcolor
+            )
             {
                 char[] incorrect_key_symbols_array = new char[12];
                 int ek = 0;
@@ -383,7 +444,8 @@ public class terminal
                         x++;
                     }
                 }
-                string entry_denied_response = $">Entry denied>{x}/{right_key_symbols_array.Length} correct.";
+                string entry_denied_response =
+                    $">Entry denied>{x}/{right_key_symbols_array.Length} correct.";
 
                 for (int v = 0; v < 156; v++)
                 {
@@ -416,7 +478,8 @@ public class terminal
         {
             Console.Clear();
             Console.WriteLine("TERMINAL LOCKED PLEASE CONTACT AN ADMINISTRATOR");
-            while (Console.ReadKey().Key != ConsoleKey.Enter) ;
+            while (Console.ReadKey().Key != ConsoleKey.Enter)
+                ;
         }
     }
 }
