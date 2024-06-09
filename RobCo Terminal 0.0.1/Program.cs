@@ -16,7 +16,7 @@ public class terminal
                               "OPERATING", "DEFEATING", "OFFSPRING", "COMMUNITY", "PANTHEIST", "COUNTRIES", "POSITIONS",
                               "FLAVORING", "REPAIRING", "BARTERING", "PONDEROUS", "FORTIFIED" };
         
-        const int Length_Of_Passwords = 9;
+        const int LENGTH_OF_PASSWORDS = 9;
 
         //creating of an array which contains 13 randomly chosen passwords from "all_keys" array
         int amount_of_keys = 13;
@@ -71,7 +71,7 @@ public class terminal
             bool coincidence = false;
             for (int j = 0; j < array_1.Length; j++)
             {
-                if (Math.Abs(array_1[j] - ccv) < Length_Of_Passwords + 1)
+                if (Math.Abs(array_1[j] - ccv) < LENGTH_OF_PASSWORDS + 1)
                 {
                     coincidence = true;
                 }
@@ -141,7 +141,9 @@ public class terminal
         bool white = false;
         bool cyan = true;
         bool yellow = false;
-        bool green = false;      
+        bool green = false;
+
+        const int AMOUNT_OF_LINES_IN_RESPONSE_FIELD = 15;
 
         //terminal interface output
         while (attempts != 0 && end < 2 && off == false)
@@ -207,7 +209,7 @@ public class terminal
 
                 Console.Write(space);
 
-                if (i < 15)
+                if (i < AMOUNT_OF_LINES_IN_RESPONSE_FIELD)
                 {
                     for (int i2 = 0; i2 < 13; i2++)
                     {
