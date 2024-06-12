@@ -192,9 +192,9 @@ public class terminal
         byte end = 0;
 
         bool white = false;
-        bool cyan = true;
+        bool cyan = false;
         bool yellow = false;
-        bool green = false;
+        bool green = true;
 
         const int AMOUNT_OF_LINES_IN_RESPONSE_FIELD = 15;
 
